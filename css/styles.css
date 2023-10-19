@@ -1,0 +1,545 @@
+/* Importa una fuente de Google Fonts (Lato con diferentes pesos de fuente) */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+/* El selector * selecciona todos los elementos HTML */
+*{
+    /* La línea siguiente, comentada, agregaría un contorno rojo de 3px a todos los elementos HTML, útil para depurar/desarrollar */
+    /* outline:3px solid red; */
+}
+
+/* :root se refiere a la raíz del documento y es donde se definen variables CSS globales */
+:root{
+    /* --padding-container define un padding (espaciado) vertical que se aplica a los contenedores en general */
+    --padding-container: 80px 0;
+    /* --color-primary define el color principal del diseño de la página web para uso constante */
+    --color-primary: #f77062;
+    /* --color-secondary define un color secundario del diseño de la página web para uso constante */
+    --color-secondary: #1b998b;
+    /* --color-bg define un color de fondo para ser utilizado en secciones o elementos */
+    --color-bg: #fafafa;
+    /* --align-title define una alineación estándar para los títulos en el diseño */
+    --align-title: center;
+    /* --box-shadow define una sombra de caja estándar para elementos como tarjetas o imágenes */
+    --box-shadow: 0 0 12px rgba(0,0,0, .2);
+}
+
+/* body es el cuerpo del documento HTML y se aplican estilos globales, como la fuente */
+body{
+    /* font-family define la familia de fuente principal de la página, en este caso, 'Lato' */
+    font-family: 'Lato', sans-serif;
+}
+
+/* .container es una clase que suele utilizarse para envolver secciones o bloques de contenido */
+.container{
+    /* width y max-width aseguran que el contenedor sea responsive y no exceda los 1200px de ancho */
+    width: 90%;
+    max-width: 1200px;
+    /* overflow: hidden previene que el contenido interior sobresalga del contenedor */
+    overflow: hidden;
+    /* margin: 0 auto centra el contenedor horizontalmente */
+    margin: 0 auto;
+    /* padding utiliza la variable --padding-container definida previamente para un espaciado consistente */
+    padding: var(--padding-container);
+    /* La siguiente línea, comentada, agregaría un borde rojo de 3px al contenedor, útil para depurar/desarrollar */
+    /* border: 3px solid red; */
+}
+
+/* Aquí comienza la sección de estilos específicos para la sección .hero de la página web */
+.hero{
+    /* Sobrescribe la variable --padding-container con 0 para esta sección */
+    --padding-container: 0;
+    /* height: 100vh hace que .hero ocupe el 100% de la altura de la ventana de visualización */
+    height: 100vh;
+    /* background-image aplica un gradiente como fondo de la sección .hero */
+    background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+}
+
+/* .hero__main es probablemente el contenedor principal dentro de la sección .hero */
+.hero__main{
+    /* height: 100% hace que .hero__main tenga la misma altura que su contenedor padre (.hero) */
+    height: 100%;
+    /* display: flex activa el modelo de caja flexible, facilitando la alineación de los elementos hijos */
+    display: flex;
+    /* justify-content: space-between asegura que los elementos hijos tengan un espacio entre ellos */
+    justify-content: space-between;
+    /* align-items: center centra verticalmente los elementos hijos */
+    align-items: center;
+    /* flex-wrap: wrap-reverse permite que los elementos hijos se ajusten y reorganicen de manera responsive */
+    flex-wrap: wrap-reverse;
+}
+
+/* A continuación se definen estilos para los elementos hijos específicos de .hero__main */
+.hero__img{
+    /* width: 45% establece que .hero__img ocupará el 45% del ancho de .hero__main */
+    width: 45%;
+    /* text-align: center centra horizontalmente el contenido de texto dentro de .hero__img */
+    text-align: center;
+    /* margin: 0 elimina cualquier margen externo de .hero__img */
+    margin: 0;
+}
+
+/* Más estilos específicos para elementos dentro de la sección .hero */
+.hero__picture{
+    /* max-width: 80% asegura que .hero__picture no exceda el 80% del ancho de su contenedor padre (.hero__img) */
+    max-width: 80%;
+}
+
+.hero__texts{
+    /* width: 45% establece que .hero__texts ocupará el 45% del ancho de .hero__main */
+    width: 45%;
+    /* color: #fff establece el color del texto en .hero__texts a blanco */
+    color: #fff;
+}
+
+.hero__title{
+    /* font-size: 4rem establece el tamaño de la fuente del título dentro de .hero__texts */
+    font-size: 4rem;
+}
+
+.hero__copy{
+    /* font-size: 1.5rem y font-weight: 300 establecen el tamaño y el peso de la fuente para el texto de copia dentro de .hero__texts */
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+
+/* About section */
+/* Sección About */
+
+/* Estilo general para los títulos en las secciones. */
+.title{
+    /* Establece el tamaño de fuente de los elementos de título */
+    font-size: 2.5rem;
+    /* Elimina el margen predeterminado de los elementos de título */
+    margin: 0;
+    /* Agrega margen en la parte inferior de los elementos de título */
+    margin-bottom: 40px;
+    /* Establece el color del texto del título, utilizando una variable CSS para mantener la coherencia */
+    color: var(--color-primary);
+    /* Alinea el texto del título, utilizando una variable definida */
+    text-align: var(--align-title);
+}
+
+/* Estilo específico para una sección presumiblemente sobre una persona o entidad (.about) */
+.about{
+    /* Utiliza flexbox para el diseño, permitiendo una fácil posición de los hijos */
+    display: flex;
+    /* Distribuye elementos hijos con espacio entre ellos */
+    justify-content: space-between;
+    /* Alinea verticalmente elementos hijos en el centro */
+    align-items: center;
+    /* Permite que los elementos hijos se ajusten a la siguiente línea en pantallas más pequeñas */
+    flex-wrap: wrap;
+}
+
+/* Estilo para un contenedor de imagen dentro de la sección .about */
+.about__img{
+    /* Establece que el ancho ocupe el 45% del contenedor .about */
+    width: 45%;
+    /* Centra el texto (si lo hay) dentro del contenedor de la imagen */
+    text-align: center;
+    /* Elimina cualquier margen del contenedor de la imagen */
+    margin: 0;
+}
+
+/* Más estilos de imagen dentro de la sección .about */
+.about__picture{
+    /* Limita el ancho de la imagen al 80% de su contenedor (.about__img) */
+    max-width: 80%;
+}
+
+/* Estilo para un contenedor de texto dentro de la sección .about */
+.about__texts{
+    /* Permite que el bloque de texto ocupe el 50% del ancho del contenedor .about */
+    width: 50%;
+    /* Sobrescribe la variable --align-title solo para esta clase */
+    --align-title:left;
+}
+
+/* Especificaciones de estilo para un párrafo dentro de la sección .about */
+.about__paragraph{
+    /* Ajusta el espacio entre las líneas de texto para facilitar la lectura */
+    line-height: 1.5;
+}
+
+/* Estilo para un botón/enlace de llamada a la acción (CTA) dentro de la sección .about */
+.about__cta{
+    /* El elemento se comporta como un elemento en línea pero permite ancho, alto, etc. */
+    display: inline-block;
+    /* Añade espacio sobre el elemento */
+    margin-top: 20px;
+    /* Establece el color de fondo utilizando una variable CSS definida */
+    background: var(--color-primary);
+    /* Rellena el contenido dentro del botón para un atractivo visual */
+    padding: 20px 40px;
+    /* Redondea las esquinas del botón */
+    border-radius: 30px;
+    /* Establece el color del texto en blanco */
+    color: #fff;
+    /* Elimina el subrayado del texto, típico de un hipervínculo */
+    text-decoration: none;
+}
+
+
+/* Portfolio section */
+
+/* Sección Portfolio */
+
+/* Estilo para el contenedor principal de la sección "Portfolio" */
+.portfolio{
+    /* Establece el color de fondo del portfolio, usando una variable predefinida */
+    background: var(--color-bg);
+}
+
+/* Estilo para el contenedor que probablemente contiene tarjetas de elementos del portfolio */
+.portfolio__cards{
+    /* Usa flexbox para un diseño flexible de los elementos hijos */
+    display: flex;
+    /* Agrega padding arriba y abajo para dar espacio alrededor de las tarjetas del portfolio */
+    padding: 40px 0;
+    /* Distribuye las tarjetas uniformemente a lo largo del eje horizontal */
+    justify-content: space-evenly;
+    /* Permite que las tarjetas se envuelvan a la siguiente línea si no hay espacio suficiente */
+    flex-wrap: wrap;
+}
+
+/* Estilo específico para cada tarjeta dentro del portfolio */
+.portfolio__card{
+    /* Define un ancho del 27% para cada tarjeta para permitir que se ajusten varias en una fila */
+    width: 27%;
+    /* Fondo blanco para cada tarjeta */
+    background: #fff;
+    /* Altura automática para permitir variabilidad en el contenido de la tarjeta */
+    height: auto;
+    /* Sombra alrededor de la tarjeta para un efecto 3D, usando una variable para la sombra */
+    box-shadow: var(--box-shadow);
+    /* Esquinas redondeadas para las tarjetas para una estética suave */
+    border-radius: 10px;
+}
+
+/* Estilo para imágenes dentro de las tarjetas del portfolio */
+.portfolio__picture{
+    /* La imagen ocupa el 100% del ancho de su contenedor padre */
+    width: 100%;
+    /* Hace que la imagen se comporte como un bloque y ocupe su propia línea */
+    display: block;
+    /* Esquinas redondeadas en la parte superior de la imagen */
+    border-radius: 10px 10px 0 0;
+    /* Establece una altura fija para las imágenes para mantener la coherencia visual */
+    height: 200px;
+    /* Asegura que las imágenes cubran el espacio sin distorsionarse */
+    object-fit: cover;
+}
+
+/* Estilo para el bloque de texto dentro de las tarjetas del portfolio */
+.portfolio__texts{
+    /* Agrega padding en el interior del bloque de texto para espacio alrededor del texto */
+    padding: 30px 20px 40px;
+}
+
+/* Estilo para el título dentro del bloque de texto de las tarjetas del portfolio */
+.portfolio__title{
+    /* Define el tamaño del texto para los títulos */
+    font-size: 1.5rem;
+    /* Centra el texto del título */
+    text-align: center;
+    /* Define el color del título, usando una variable para la coherencia de color */
+    color: var(--color-secondary);
+    /* Elimina los márgenes para el título */
+    margin: 0;
+}
+
+/* Estilo para los párrafos dentro del bloque de texto de las tarjetas del portfolio */
+.portfolio__paragraph{
+    /* Define un peso de fuente más ligero para los párrafos */
+    font-weight: 300;
+    /* Añade margen arriba y abajo de los párrafos para espacio visual */
+    margin: 30px 0;
+}
+
+/* Estilo para un botón o enlace de llamada a la acción (CTA) en las tarjetas del portfolio */
+.portfolio__cta{
+    /* Hace que el enlace o botón se muestre como un bloque */
+    display: block;
+    /* Define el color de fondo del botón/enlace */
+    background: var(--color-secondary);
+    /* Añade padding arriba y abajo para espacio y estética del botón/enlace */
+    padding: 15px 0;
+    /* Esquinas redondeadas para la estética del botón/enlace */
+    border-radius: 30px;
+    /* Centra el texto dentro del botón/enlace */
+    text-align: center;
+    /* Define el color del texto como blanco */
+    color: #fff;
+    /* Define un peso de fuente más ligero */
+    font-weight: 300;
+    /* Elimina el subrayado del texto del enlace */
+    text-decoration: none;
+}
+
+/* Sección Copy */
+
+/* Estilo para un contenedor (presumiblemente una sección de copia o de texto destacado) */
+.copy{
+    /* Define el color de fondo utilizando una variable predefinida */
+    background: var(--color-primary);
+}
+
+/* Estilo para el bloque de texto dentro de la sección .copy */
+.copy__texts{
+    /* Sobrescribe el color primario sólo para esta clase, estableciéndolo como blanco */
+    --color-primary:#fff;
+}
+
+/* Estilo para un título, presumiblemente dentro de .copy, que requiere ajuste de margen */
+.title--margin{
+    /* Elimina el margen del título */
+    margin: 0;
+}
+
+/* Estilos para el contenedor principal de la galería */
+.gallery__container{
+    padding: 20px 0;  /* Relleno arriba y abajo */
+    display: flex;  /* Usa el modelo de diseño flexbox */
+    flex-wrap: wrap;  /* Permite que los hijos se envuelvan */
+    justify-content: space-around;  /* Espacio entre elementos */
+}
+
+/* Estilos para las imágenes en la galería */
+.gallery__picture{
+    width: 30%;  /* Anchura del elemento */
+    height: 250px;  /* Altura del elemento */
+    margin-bottom: 20px;  /* Margen inferior */
+    display: block;  /* Elemento tipo bloque */
+    border-radius: 5px;  /* Bordes redondeados */
+    object-fit: cover;  /* Ajuste de la imagen */
+    box-shadow: var(--box-shadow);  /* Sombra con valor de una variable */
+}
+
+/* Estilos del fondo de la sección de lenguajes */
+.languages{
+    background: var(--color-bg);  /* Color de fondo basado en variable */
+}
+
+/* Estilos para el contenedor de lenguajes */
+.languages__container{
+    display: flex;  /* Usa el modelo de diseño flexbox */
+    justify-content: space-evenly;  /* Distribución uniforme entre elementos */
+    flex-wrap: wrap;  /* Permite envolver elementos */
+}
+
+/* Estilos para las imágenes de los lenguajes */
+.languages__picture{
+    width: 20%;  /* Anchura del elemento */
+    height: 100px;  /* Altura del elemento */
+}
+
+/* Estilos generales para el pie de página */
+.footer{
+    background: var(--color-primary);  /* Color de fondo basado en variable */
+    color: #fff;  /* Color de texto blanco */
+    text-align: center;  /* Centrar el texto horizontalmente */
+}
+
+/* Estilos para el contenedor del pie de página */
+.footer__container{
+    --color-primary: #fff;  /* Define una nueva variable */
+    display: flex;  /* Usa el modelo de diseño flexbox */
+    justify-content: space-between;  /* Espacio entre los elementos */
+    align-items: center;  /* Centra los elementos verticalmente */
+}
+
+/* Estilos para el texto en el pie de página */
+.footer__texts{
+    width: 50%;  /* Anchura del elemento */
+}
+
+/* Estilos para los íconos en el pie de página */
+.footer__icon{
+    display: inline-block;  /* Bloque en línea */
+    font-size: 2rem;  /* Tamaño de fuente */
+    margin: 0 30px;  /* Margen horizontal */
+    text-decoration: none;  /* Sin subrayado */
+    color: #fff;  /* Color blanco */
+    margin-bottom: 30px;  /* Margen inferior */
+    width: 60px;  /* Anchura del ícono */
+    height: 60px;  /* Altura del ícono */
+    border: 1px solid;  /* Borde del ícono */
+    border-radius: 50%;  /* Ícono redondo */
+}
+
+/* Estilos específicos para íconos de Font Awesome en el pie de página */
+.footer__icon.fab{
+    line-height: 60px;  /* Alinea el ícono verticalmente al centro */
+}
+
+/* Efecto hover para los íconos en el pie de página */
+.footer__icon:hover{
+    background: #fff;  /* Fondo blanco */
+    color: #f77062;  /* Cambia el color del ícono */
+    cursor: pointer;  /* Cursor en forma de mano */
+}
+
+/* Estilos para los enlaces en el pie de página */
+.footer__link{
+    display: inline-block;  /* Bloque en línea */
+    color: #fff;  /* Color blanco */
+    margin: 0 20px;  /* Margen horizontal */
+    margin-bottom: 15px;  /* Margen inferior */
+}
+
+/* Efecto hover para los enlaces en el pie de página */
+.footer__link:hover{
+    text-decoration: none;  /* Sin subrayado */
+}
+
+/* Estilos para la imagen en el pie de página */
+.footer__img{
+    margin: 0;  /* Sin margen */
+    width: 35%;  /* Anchura del elemento */
+}
+
+/* Estilos para las imágenes en el pie de página */
+.footer__picture{
+    width: 90%;  /* Anchura del elemento */
+}
+
+/* Estilos adaptativos para pantallas hasta 800px de ancho */
+@media screen and (max-width: 800px){
+
+    /* Estilos para el héroe */
+    .hero{
+        height: auto;  /* Altura automática */
+        min-height: 100vh;  /* Altura mínima de la ventana */
+        --padding-container: 40px 0;  /* Padding personalizado usando variable */
+    }
+
+    .hero__main{
+        justify-content: center;  /* Centrar el contenido */
+    }
+
+    .hero__img{
+        width: 60%;  /* Anchura del elemento */
+        margin-bottom: 30px;  /* Margen inferior */
+    }
+
+    .hero__picture{
+        max-width: 85%;  /* Anchura máxima del elemento */
+    }
+
+    .hero__texts{
+        width: 100%;  /* Anchura del elemento */
+    }
+
+    .hero__title{
+        font-size: 3.5rem;  /* Tamaño de fuente */
+    }
+
+    /* Sección about */
+    .about__texts{
+        width: 90%;  /* Anchura del elemento */
+        text-align: center;  /* Centrar el texto horizontalmente */
+        margin: 0 auto;  /* Centrar el bloque */
+        margin-bottom: 80px;  /* Margen inferior */
+        --align-title:center ;  /* Alineación personalizada usando variable */
+    }
+
+    .about__paragraph{
+        text-align: left;  /* Alinear texto a la izquierda */
+    }
+
+    .about__img{
+        width: 100%;  /* Anchura del elemento */
+    }
+
+    /* Sección portfolio */
+    .portafolio__card{
+        width: 45%;  /* Anchura del elemento */
+        margin-bottom: 30px;  /* Margen inferior */
+    }
+
+    /* Sección de galería */
+    .gallery__picture{
+        width: 45%;  /* Anchura del elemento */
+    }
+
+    /* Sección de lenguajes */
+    .languages__container{
+        justify-content: space-between;  /* Espacio entre los elementos */
+    }
+
+    /* Sección de pie de página */
+    .footer__container{
+        flex-direction: column;  /* Orientación vertical */
+    }
+
+    .footer__img{
+        order: -1;  /* Orden para mostrar al principio */
+        width: 45%;  /* Anchura del elemento */
+        margin-bottom: 30px;  /* Margen inferior */
+    }
+
+    .footer__picture{
+        width: 100%;  /* Anchura del elemento */
+    }
+
+    .footer__texts{
+        width: 100%;  /* Anchura del elemento */
+    }
+}
+
+/* Estilos adaptativos para pantallas hasta 550px de ancho */
+@media screen and (max-width:550px){
+    /* Sección de héroe */
+    .hero__img{
+        width: 85%;  /* Anchura del elemento */
+    }
+
+    .hero__picture{
+        max-width: 100%;  /* Anchura máxima del elemento */
+    }
+
+    .hero__title{
+        font-size: 2.8rem;  /* Tamaño de fuente */
+    }
+
+    /* Títulos genéricos */
+    .title{
+        font-size: 2.2rem;  /* Tamaño de fuente */
+    }
+
+    /* Sección about */
+    .about__texts{
+        width: 100%;  /* Anchura del elemento */
+    }
+
+    /* Sección portfolio */
+    .portafolio__card{
+        width: 90%;  /* Anchura del elemento */
+        max-width: 300px;  /* Anchura máxima del elemento */
+    }
+
+    /* Sección de galería */
+    .gallery__picture{
+        width: 90%;  /* Anchura del elemento */
+        max-width: 300px;  /* Anchura máxima del elemento */
+    }
+
+    /* Sección de lenguajes */
+    .languages__container{
+        justify-content: space-around;  /* Distribución uniforme entre elementos */
+    }
+
+    .languages__picture{
+        width: 35%;  /* Anchura del elemento */
+        margin-bottom: 30px;  /* Margen inferior */
+    }
+
+    /* Sección de pie de página */
+    .footer__img{
+        width: 90%;  /* Anchura del elemento */
+        max-width: 330px;  /* Anchura máxima del elemento */
+        margin-bottom: 40px;  /* Margen inferior */
+    }
+}
+
